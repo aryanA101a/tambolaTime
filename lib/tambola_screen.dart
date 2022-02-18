@@ -122,7 +122,7 @@ class _TambolaScreenState extends State<TambolaScreen> {
                   MaterialButton(
                     height: 90,
                     onPressed: () {
-                      start();
+                      ts.timer == null ? start() : () {};
                     },
                     color: Colors.amber.shade700,
                     textColor: Colors.white,
@@ -138,9 +138,10 @@ class _TambolaScreenState extends State<TambolaScreen> {
                   MaterialButton(
                     height: 60,
                     onPressed: () {
-                      setState(() {});
-                      ts.timer?.cancel();
-                      ts.init();
+                      setState(() {
+                        ts.timer?.cancel();
+                        ts.init();
+                      });
                     },
                     color: Colors.amber.shade700,
                     textColor: Colors.white,
