@@ -9,17 +9,21 @@ class TambolaServices {
   List<int> randomNumArr = [];
   late int counter;
   Timer? timer;
-
+  //constructor
   TambolaServices() {
     init();
   }
 
+  //initialize/reset every thing
   init() {
+    //create a list of integers from 1 to 90
     tambolaNumArr =
         List.generate(90, (index) => TambolaNumber(number: index + 1));
 
+    //create a list of integers from 1 to 90
     randomNumArr = List.generate(90, (index) => index + 1);
 
+    //randomize the array
     randomNumArr.shuffle();
 
     currentNumber = null;
